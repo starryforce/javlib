@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "JavLibrary HighLight",
+    "description": "This extension highlight the movies you owns.",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "*://*.ja14b.com/*",
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["*://*.ja14b.com/*"],
+        "js": ["content.js"]
+    }]
+}
